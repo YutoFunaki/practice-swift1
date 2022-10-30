@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         let uiview2 = UIView()
         uiview2.frame.size = CGSize(width: 150, height: 150)
-        uiview2.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
+        uiview2.center = CGPoint(x: uiview.frame.size.width / 2, y: uiview.frame.size.height / 2)
         uiview2.backgroundColor = .cyan
         uiview.addSubview(uiview2)
     }
