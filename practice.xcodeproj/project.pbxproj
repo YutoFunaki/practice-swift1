@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7746AD81290EE04000253E30 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746AD80290EE04000253E30 /* Colors.swift */; };
 		77D752B0290E96CA005AFD2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D752AF290E96CA005AFD2E /* AppDelegate.swift */; };
 		77D752B2290E96CA005AFD2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D752B1290E96CA005AFD2E /* SceneDelegate.swift */; };
 		77D752B4290E96CA005AFD2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D752B3290E96CA005AFD2E /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7746AD80290EE04000253E30 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		77D752AC290E96CA005AFD2E /* practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D752AF290E96CA005AFD2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77D752B1290E96CA005AFD2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				77D752AF290E96CA005AFD2E /* AppDelegate.swift */,
 				77D752B1290E96CA005AFD2E /* SceneDelegate.swift */,
 				77D752B3290E96CA005AFD2E /* ViewController.swift */,
+				7746AD80290EE04000253E30 /* Colors.swift */,
 				77D752B5290E96CA005AFD2E /* Main.storyboard */,
 				77D752B8290E96CC005AFD2E /* Assets.xcassets */,
 				77D752BA290E96CC005AFD2E /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D752B4290E96CA005AFD2E /* ViewController.swift in Sources */,
+				7746AD81290EE04000253E30 /* Colors.swift in Sources */,
 				77D752B0290E96CA005AFD2E /* AppDelegate.swift in Sources */,
 				77D752B2290E96CA005AFD2E /* SceneDelegate.swift in Sources */,
 			);
