@@ -8,21 +8,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let colors = Colors()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uiview = UIView()
-        uiview.frame.size = CGSize(width: 200, height: 200)
-        uiview.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
-        uiview.backgroundColor = .systemIndigo
-        view.addSubview(uiview)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height / 2)
+        //gradientLayerの位置を設定
         
-        let uiview2 = UIView()
-        uiview2.frame.size = CGSize(width: 150, height: 150)
-        uiview2.center = CGPoint(x: uiview.frame.size.width / 2, y: uiview.frame.size.height / 2)
-        uiview2.backgroundColor = .cyan
-        uiview.addSubview(uiview2)
+        gradientLayer.colors = [colors.bluePurple.cgColor, colors.blue.cgColor]
+        //cgColor:UIcolorとはまた別の色の型
+        //bluePurpleとblueのグラデーションを設定
+        
+        gradientLayer.startPoint = CGPoint.init(x: 0,y: 0)
+        //方向の始点を設定
+        
+        gradientLayer.endPoint = CGPoint.init(x: 1,y: 1)
+        //方向の終点を設定
+        
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        //CAGradientLayerはaddSubViewで載せることができないため、view.layerにinsertSublayer(子,at: 階層)として設定　＊atの数字が大きいほど前面にいく
+        
     }
 
 
