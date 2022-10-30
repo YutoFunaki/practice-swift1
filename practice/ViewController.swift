@@ -11,12 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        let uiView = UIView()
-        uiView.frame = CGRect(x: 50, y: 100, width: 100, height: 100)
-        uiView.backgroundColor = UIColor.systemBlue
-        view.addSubview(uiView)
+        let size = view.frame.size
+        let uiview = UIView()
+        uiview.frame.size = CGSize(width: 100, height: 100)
+        uiview.center = CGPoint(x: size.width / 2, y: size.height / 2)
+        uiview.backgroundColor = UIColor.systemBlue
+        view.addSubview(uiview)
     }
 
 
