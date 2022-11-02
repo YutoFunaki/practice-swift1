@@ -15,11 +15,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setUpGradation()
-        setUpContentView()
+        setUpContent()
         
        
         
         
+    }
+    
+    func setUpLabel(_ text: String, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView){
+        let label = UILabel()
+        label.text = text
+        label.frame.size = size
+        label.center.x = centerX
+        label.frame.origin.y = y
+        label.font = font
+        label.textColor = color
+        parentView.addSubview(label)
     }
         
         func setUpGradation() {
@@ -41,7 +52,7 @@ class ViewController: UIViewController {
             //CAGradientLayerはaddSubViewで載せることができないため、view.layerにinsertSublayer(子,at: 階層)として設定　＊atの数字が大きいほど前面にいく
     }
     
-         func setUpContentView() {
+         func setUpContent() {
             let contentView = UIView()
             contentView.frame.size = CGSize(width: view.frame.size.width, height: 340)//width:画面幅
             contentView.center = CGPoint(x: view.center.x, y: view.center.y)//真ん中に設定
