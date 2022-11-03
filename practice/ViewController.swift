@@ -79,7 +79,22 @@ class ViewController: UIViewController {
         setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view)
         //y: contentviewが340のheightを持ち、画面中央に配置しているため、画面中央(view.frame.size.height/ 2) + contentView　の半分の高さ170よりも20下に行く190、70下に行く240として、常にcontentViewの下にボタンが配置されるようにしている。
         
+        
     }
+    
+    func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: name), for: .normal)
+        button.frame.size = CGSize(width: 30, height: 30)
+        button.tintColor = .white
+        button.frame.origin = CGPoint(x: x, y: 25)
+        return button
+        //UIButtonを呼び出し元に返している
+    }
+    @objc func chatAction() {
+        print("タップchat")
+    }
+    
     
     func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView){
         let button = UIButton(type: .system)//.system: タップした時に明るくなる機能
