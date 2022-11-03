@@ -86,6 +86,27 @@ class ViewController: UIViewController {
         //#selector: 関数名を書くのだが＠objcとついたもの限定
         //.touchDown: ボタンを押したタイミングで関数が呼ばれるよう設定
         setUpImageButton("reload", x: 10).addTarget(self, action: #selector(reloadAction), for: .touchDown)
+        
+        let imageView = UIImageView()
+        //UIImageViewインスタンスを作る
+        let image = UIImage(named: "virus")
+        imageView.image = image
+        //UIImageViewインスタンスのimageプロパティにUIImageを代入する
+        imageView.frame = CGRect(x: view.frame.size.width, y: -65, width: 50, height: 50)
+        //UIImageViewインスタンスの位置とサイズを決める
+        //CGRectの引数xで画面幅の値を指定し、画面外から入ってくるアニメーションにするために画面外に画像を配置している
+        contentView.addSubview(imageView)
+        //addSubViewでUIImageインスタンスを表示させる
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.curveEaseIn], animations: {
+            imageView.frame = CGRect(x: self.view.frame.size.width - 100, y: -65, width: 50,
+                height: 50)
+            imageView.transform = CGAffineTransform(rotationAngle: 90)
+        }, completion: nil)
+        //アニメーションを表現するための設定
+        //UIView.animateのwithDurationはアニメーション時間、delayはコードが読まれてからのタイムラグ、optionはアニメーションスタイル、animations:{}が変化させたい値をアニメーションで表現する領域。
+        //CGRect: 画面外にあった画像を0.5秒のタイムラグと1.5秒のアニメーションで、画面幅-100の位置に移動させるよう設定
+        //transform: サイズや位置を変化させるプロパティ。今回はCGAffineTransformのrotationAngelによって、画像を-90度回転させている。アニメーションがついているため画面を開くと自動的に変換が動的に変わり、回転しながら画面内に移動する。
+        //completion: まだ
     }
     
     func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
