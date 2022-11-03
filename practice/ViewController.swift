@@ -79,15 +79,25 @@ class ViewController: UIViewController {
         setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view)
         //y: contentviewが340のheightを持ち、画面中央に配置しているため、画面中央(view.frame.size.height/ 2) + contentView　の半分の高さ170よりも20下に行く190、70下に行く240として、常にcontentViewの下にボタンが配置されるようにしている。
         
-        
+        setUpImageButton("chat", x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchDown)
+        //returnでUIButtonを呼び出し元に返しているので、呼び出し元のsetUpImageButton()はUIButtonと同等に扱うことができる
+        //addTarget: 「ボタンを押したときに呼び出す関数」や、「押した時か、離した時か」などのタイミングを設定する
+        //selfはクラスであるviewControllerを指している
+        //#selector: 関数名を書くのだが＠objcとついたもの限定
+        //.touchDown: ボタンを押したタイミングで関数が呼ばれるよう設定
     }
     
     func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
+        //->UIButton: 呼び出し元にUIButtonを返す書き方
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: name), for: .normal)
+        //setImage: ボタンのアイコンを設定するためのメソッド named: ファイル名 for: ボタンの状態
         button.frame.size = CGSize(width: 30, height: 30)
         button.tintColor = .white
+        //設定した画像の色を変える設定
         button.frame.origin = CGPoint(x: x, y: 25)
+        //ボタンのx座標とy座標を設定
+        view.addSubview(button)
         return button
         //UIButtonを呼び出し元に返している
     }
