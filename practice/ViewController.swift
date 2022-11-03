@@ -77,18 +77,22 @@ class ViewController: UIViewController {
         let height = view.frame.size.height / 2
         setUpButton("健康管理", size: size, y: height + 190, color: colors.blue, parentView: view)
         setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view)
+        //y: contentviewが340のheightを持ち、画面中央に配置しているため、画面中央(view.frame.size.height/ 2) + contentView　の半分の高さ170よりも20下に行く190、70下に行く240として、常にcontentViewの下にボタンが配置されるようにしている。
         
     }
     
     func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView){
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .system)//.system: タップした時に明るくなる機能
         button.setTitle(title, for: .normal)
+        //UIButtonにタイトルをつけるための文。「title」が名前になる。　for:.normalはボタンが選択された状態の設定
         button.frame.size = size
         button.center.x = view.center.x
+        //center.x: そのパーツの中心のx座標を取得している。この場合は、buttonの中心を画面の中心に設定している
         let attributedTitle = NSAttributedString(string: title, attributes: [NSAttributedString.Key.kern: 8.0])
+        //NSAttributeString: 文字同士の感覚を設定している。枠をつけたりすることもできる
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.frame.origin.y = y
-        button.setTitleColor(color, for: .normal)
+        button.setTitleColor(color, for: .normal)//UIButtonの色を変更
         parentView.addSubview(button)
     }
     
