@@ -54,12 +54,13 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .systemGray6//下半分の画面をグレーにする
         
-        let labelFont = UIFont.systemFont(ofSize: 15, weight: .heavy)
+        let labelFont = UIFont.systemFont(ofSize: 15, weight: .heavy)//heavy: 文字を太くする
         let size = CGSize(width: 150, height: 50)
         let color = colors.bluePurple
         let leftX = view.frame.size.width * 0.33
         let rightX = view.frame.size.width * 0.80
         //フォントやサイズ、座標を一括で変更できるように定数で設定する
+        setUpLabel("Covid in Japan", size: CGSize(width: 180, height: 35), centerX: view.center.x - 20, y: -60, font: .systemFont(ofSize: 25, weight: .heavy), color: .white, contentView)
         setUpLabel("PCR数", size: size, centerX: leftX, y: 20, font: labelFont, color: color, contentView)
         setUpLabel("感染者数", size: size, centerX: rightX, y: 20, font: labelFont, color: color, contentView)
         setUpLabel("入院者数", size: size, centerX: leftX, y: 120, font: labelFont, color: color, contentView)
