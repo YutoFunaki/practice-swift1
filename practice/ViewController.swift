@@ -85,6 +85,7 @@ class ViewController: UIViewController {
         //selfはクラスであるviewControllerを指している
         //#selector: 関数名を書くのだが＠objcとついたもの限定
         //.touchDown: ボタンを押したタイミングで関数が呼ばれるよう設定
+        setUpImageButton("reload", x: 10).addTarget(self, action: #selector(reloadAction), for: .touchDown)
     }
     
     func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
@@ -100,6 +101,11 @@ class ViewController: UIViewController {
         view.addSubview(button)
         return button
         //UIButtonを呼び出し元に返している
+    }
+    @objc func reloadAction() {
+        loadView()
+        viewDidLoad()
+        //更新するためのシステムが既にUIViewControllerにあるので、それを読み込むための文(ライフサイクル)
     }
     @objc func chatAction() {
         print("タップchat")
